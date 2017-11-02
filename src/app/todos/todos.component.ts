@@ -2,7 +2,7 @@ import {Component} from "@angular/core";
 import {fade, slide, bounceOutLeftAnimation, fadeInAnimation} from "../animations";
 import {
   trigger, transition, style, animate, useAnimation, query, animation, animateChild,
-  group
+  group, stagger
 } from "@angular/animations";
 
 @Component({
@@ -17,7 +17,7 @@ import {
             style({transform: 'translateY(-20px)'}),
             animate(1000)
           ]),
-          query('@todoAnimation', animateChild())
+          query('@todoAnimation', stagger(200, animateChild()))
         ])
       ])
     ]),
