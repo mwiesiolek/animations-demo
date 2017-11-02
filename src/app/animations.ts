@@ -6,3 +6,10 @@ export let fade = trigger('fade', [
     animate(2000)
   ])
 ]);
+
+export let slide = trigger('slide', [
+  state('void', style({ transform: 'translateX(-20px)' })),
+  transition(':enter, :leave', [
+    animate(500)
+  ])
+]);
