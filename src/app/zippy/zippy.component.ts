@@ -7,9 +7,10 @@ import {trigger, state, style, transition, animate} from "@angular/animations";
   styleUrls: ['./zippy.component.css'],
   animations: [
     trigger('expandCollapse', [
-      state('collapsed', style({ height:0, overflow: 'hidden', paddingTop: 0, paddingBottom: 0 })),
+      state('collapsed', style({ height:0, paddingTop: 0, paddingBottom: 0, opacity: 0 })),
       transition('collapsed => expanded', [
-        animate('300ms ease-out')
+        animate('300ms ease-out', style({ height: '*', paddingTop: '*', paddingBottom: '*'})),
+        animate('1s', style({ opacity: 1 }))
       ]),
       transition('expanded => collapsed', [
         animate('300ms ease-in')
